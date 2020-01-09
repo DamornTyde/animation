@@ -18,15 +18,15 @@ window.requestAnimationFrame(animate);
 function animate() {
     const gap = grid * frame;
     ctx.beginPath();
-    ctx.fillStyle = "rgba(255, 255, 255, 0.01)"
-    ctx.fillRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height)
+    ctx.fillStyle = "rgba(255, 255, 255, 0.01)";
+    ctx.fillRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
     ctx.beginPath();
     ctx.moveTo(0, -radius);
     for (var i = 1; i < 11; i++) {
         ctx.rotate(gap * i);
         ctx.lineTo(0, -radius);
     }
-    ctx.strokeStyle = "#000";
+    ctx.strokeStyle = "rgba(0, 0, 0, 0.1)";
     ctx.lineWidth = radius * 0.015;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
