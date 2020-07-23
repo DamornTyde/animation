@@ -3,7 +3,6 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const steps = 30000;
 const grid = Math.PI * 2 / steps;
-const linesInput = document.getElementById("lines");
 
 canvas.width = 800;
 canvas.height = canvas.width;
@@ -41,7 +40,7 @@ function animate() {
     window.requestAnimationFrame(animate);
 }
 
-document.getElementById("lines").addEventListener("click" ,(event) => {
+document.getElementById("lines").addEventListener("change" ,(event) => {
 	lines = Number(event.target.value);
 	frame = 0;
 });
