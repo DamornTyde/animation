@@ -40,7 +40,7 @@ function animate() {
     window.requestAnimationFrame(animate);
 }
 
-document.getElementById("lines").addEventListener("change" ,function(this) {
+document.getElementById("lines").addEventListener("onChange" ,function(this) {
 	lines = Number(this.value);
 	frame = 0;
 });
