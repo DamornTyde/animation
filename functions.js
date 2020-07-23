@@ -43,4 +43,6 @@ function animate() {
 document.getElementById("lines").addEventListener("change" ,(event) => {
 	lines = Number(event.target.value);
 	frame = 0;
+    steps = lines * 3000;
+    grid = Math.PI * 2 / steps;
 });
