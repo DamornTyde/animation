@@ -1,8 +1,6 @@
 'use strict';
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-const steps = 30000;
-const grid = Math.PI * 2 / steps;
 
 canvas.width = 800;
 canvas.height = canvas.width;
@@ -13,6 +11,8 @@ ctx.translate(radius, radius);
 radius = radius * 0.9;
 var frame = 0;
 var lines = 10;
+var steps = lines * 3000;
+var grid = Math.PI * 2 / steps;
 
 window.requestAnimationFrame(animate);
 
