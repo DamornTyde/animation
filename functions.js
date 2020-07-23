@@ -27,7 +27,7 @@ function animate() {
         ctx.rotate(gap * i);
         ctx.lineTo(0, -radius);
     }
-    ctx.strokeStyle = "rgba(0, 0, 0, 0.1)";
+    ctx.strokeStyle = "rgba(0, 0, 0, 1 / lines)";
     ctx.lineWidth = radius * 0.015;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
