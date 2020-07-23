@@ -19,7 +19,7 @@ window.requestAnimationFrame(animate);
 function animate() {
     const gap = grid * frame;
     ctx.beginPath();
-    ctx.fillStyle = "rgba(255, 255, 255, 0.01)";
+    ctx.fillStyle = "rgba(255, 255, 255, 0.1 / lines)";
     ctx.fillRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
     ctx.beginPath();
     ctx.moveTo(0, -radius);
