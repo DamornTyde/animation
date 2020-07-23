@@ -41,7 +41,7 @@ function animate() {
     window.requestAnimationFrame(animate);
 }
 
-linesInput("lines").addEventListener("click" ,function() {
-	lines = Number(linesInput.value);
+document.getElementById("lines").addEventListener("click" ,(event) => {
+	lines = Number(event.target.value);
 	frame = 0;
 });
