@@ -41,7 +41,7 @@ function animate() {
     window.requestAnimationFrame(animate);
 }
 
-linesInput("lines").addEventListener("onChange" ,function() {
+linesInput("lines").addEventListener("change" ,function() {
 	lines = Number(linesInput.value);
 	frame = 0;
 });
