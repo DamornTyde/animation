@@ -1,12 +1,12 @@
 'use strict';
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+const speed = 1100;
 
 canvas.width = 800;
 canvas.height = canvas.width;
 ctx.fillStyle = "#fff";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
-const speed = 1100;
 
 var radius = canvas.width / 2;
 ctx.translate(radius, radius);
