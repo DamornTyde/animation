@@ -6,12 +6,14 @@ canvas.width = 800;
 canvas.height = canvas.width;
 ctx.fillStyle = "#fff";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
+const speed = 1100;
+
 var radius = canvas.width / 2;
 ctx.translate(radius, radius);
 radius = radius * 0.9;
 var frame = 0;
-var lines = 10;
-var steps = lines * 3000;
+var lines = 1;
+var steps = speed;
 var grid = Math.PI * 2 / steps;
 
 window.requestAnimationFrame(animate);
@@ -27,22 +29,18 @@ function animate() {
         ctx.rotate(gap * i);
         ctx.lineTo(0, -radius);
     }
-    ctx.strokeStyle = "rgba(0, 0, 0, 0.1)";
-    ctx.lineWidth = radius * 0.015;
+    ctx.strokeStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.lineWidth = radius * 0.01;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
     ctx.stroke();
-    ctx.rotate((-gap) * lines * (lines + 1) / 2);
+    ctx.rotate(-gap * lines * (lines + 1) / 2);
     frame++;
     if (frame == steps) {
         frame = 0;
+        lines++;
+        steps = lines * (lines - 1) * speed;
+        grid = Math.PI * 2 / steps
     }
     window.requestAnimationFrame(animate);
 }
-
-document.getElementById("lines").addEventListener("change" ,(event) => {
-    lines = Number(event.target.value);
-    frame = 0;
-    steps = lines * 3000;
-    grid = Math.PI * 2 / steps;
-});
