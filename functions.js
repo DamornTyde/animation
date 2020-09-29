@@ -39,7 +39,7 @@ function animate() {
     if (frame == steps) {
         frame = 0;
         lines++;
-        steps = lines * (lines - 1) * speed;
+        steps = lines * (lines + 1) * speed;
         grid = Math.PI * 2 / steps
     }
     window.requestAnimationFrame(animate);
