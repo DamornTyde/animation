@@ -1,7 +1,7 @@
 'use strict';
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-const speed = 1100;
+const speed = 700;
 
 canvas.width = 800;
 canvas.height = canvas.width;
@@ -15,13 +15,17 @@ var frame = 0;
 var lines = 1;
 var steps = speed;
 var grid = Math.PI * 2 / steps;
+ctx.fillStyle = "rgba(255, 255, 255, 0.01)";
+ctx.strokeStyle = "rgba(0, 0, 0, 0.1)";
+ctx.lineWidth = radius * 0.01;
+ctx.lineCap = "round";
+ctx.lineJoin = "round";
 
 window.requestAnimationFrame(animate);
 
 function animate() {
     const gap = grid * frame;
     ctx.beginPath();
-    ctx.fillStyle = "rgba(255, 255, 255, 0.01)";
     ctx.fillRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
     ctx.beginPath();
     ctx.moveTo(0, -radius);
@@ -29,10 +33,6 @@ function animate() {
         ctx.rotate(gap * i);
         ctx.lineTo(0, -radius);
     }
-    ctx.strokeStyle = "rgba(0, 0, 0, 0.05)";
-    ctx.lineWidth = radius * 0.01;
-    ctx.lineCap = "round";
-    ctx.lineJoin = "round";
     ctx.stroke();
     ctx.rotate(-gap * lines * (lines + 1) / 2);
     frame++;
@@ -40,7 +40,7 @@ function animate() {
         frame = 0;
         lines++;
         steps = lines * (lines + 1) * speed / 2;
-        grid = Math.PI * 2 / steps
+        grid = Math.PI * 2 / steps;
     }
     window.requestAnimationFrame(animate);
 }
