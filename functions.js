@@ -16,7 +16,7 @@ var lines = 1;
 var steps = speed;
 var grid = Math.PI * 2 / steps;
 ctx.fillStyle = "rgba(255, 255, 255, 0.01)";
-ctx.strokeStyle = "rgba(0, 0, 0, 0.1)";
+ctx.strokeStyle = "rgba(0, 0, 0, 0.05)";
 ctx.lineWidth = radius * 0.01;
 ctx.lineCap = "round";
 ctx.lineJoin = "round";
@@ -26,7 +26,9 @@ window.requestAnimationFrame(animate);
 function animate() {
     const gap = grid * frame;
     ctx.beginPath();
-    ctx.fillRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
+    if (frame % 5 == 0) {
+        ctx.fillRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
+    }
     ctx.beginPath();
     ctx.moveTo(0, -radius);
     for (var i = 1; i < lines + 1; i++) {
