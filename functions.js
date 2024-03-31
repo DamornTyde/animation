@@ -26,7 +26,7 @@ window.requestAnimationFrame(animate);
 function animate() {
     const gap = grid * frame;
     ctx.beginPath();
-    if (frame % 10 == 0) {
+    if (frame % 20 == 0) {
         ctx.fillRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
     }
     ctx.beginPath();
