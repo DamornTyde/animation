@@ -5,7 +5,7 @@ const speed = 700;
 
 canvas.width = 800;
 canvas.height = canvas.width;
-ctx.fillStyle = "#d5d5d5";
+ctx.fillStyle = "#A2A2A2";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 var radius = canvas.width / 2;
